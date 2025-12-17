@@ -6,6 +6,19 @@ pipeline {
                 echo 'Ejecutando tests automáticos (CI)...'
                 // instalar dependencias de desarrollo en el agente
                 sh 'npm ci'
+                // --- debug: listar workspace y mostrar package.json/branch para diagnosticar "NO test found" ---
+                sh '''
+                  echo "PWD: $(pwd)"
+                  echo "--- ls -la (workspace) ---"
+                  ls -la
+                  echo "--- ls -R (workspace recursive) ---"
+                  ls -R . || true
+                  echo "--- package.json ---"
+                  cat package.json || true
+                  echo "--- git info ---"
+                  git rev-parse --abbrev-ref HEAD || true
+                  git status --porcelain || true
+                '''
                 // ejecutar tests en modo CI y generar informe JUnit
                 sh 'npm run test:ci'
             }

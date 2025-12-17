@@ -4,8 +4,9 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Ejecutando tests automáticos (CI)...'
-                // instalar dependencias de desarrollo en el agente
-                sh 'npm ci'
+                // instalar dependencias de desarrollo en el agente (forzar devDependencies)
+                // usamos NPM_CONFIG_PRODUCTION=false para asegurar instalación de dev deps
+                sh 'NPM_CONFIG_PRODUCTION=false npm ci'
                 // --- debug: listar workspace y mostrar package.json/branch para diagnosticar "NO test found" ---
                 sh '''
                   echo "PWD: $(pwd)"

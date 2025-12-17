@@ -4,7 +4,8 @@
   "description": "Repositorio para CI/CD con Jenkins",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "echo 'Simulando build...' && mkdir -p dist && echo 'Artefacto de prueba' > dist/artefacto.txt"
   },
   "repository": {
     "type": "git",

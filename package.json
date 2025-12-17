@@ -3,10 +3,11 @@
   "version": "1.0.0",
   "description": "Repositorio para CI/CD con Jenkins",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "echo 'Simulando build...' && mkdir -p dist && echo 'Artefacto de prueba' > dist/artefacto.txt"
+ "scripts": {
+  "test": "jest",
+  "build": "echo 'Simulando build...' && mkdir -p dist && echo 'Artefacto de prueba' > dist/artefacto.txt"
   },
+  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/yoriel735/smartrecipes-ci.git"

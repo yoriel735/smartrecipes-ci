@@ -4,3 +4,4 @@ Probando Jenkins CI/CD
 Probando trigger automático
 Probando trigger automático
 Probando trigger automático
+Prueba de trigger automático del pipeline

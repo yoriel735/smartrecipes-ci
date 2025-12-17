@@ -1,16 +1,27 @@
 pipeline {
     agent any
     stages {
-        stage('Build') {
+        stage('Install') {
             steps {
                 echo 'Instalando dependencias...'
                 sh 'npm install'
-                sh 'npm run build || echo "Build script no definido, continuando..."'
+            }
+        }
+        stage('Test') {
+            steps {
+                echo 'Ejecutando tests...'
+                sh 'npm test'
+            }
+        }
+        stage('Build') {
+            steps {
+                echo 'Construyendo la aplicación...'
+                sh 'npm run build'
             }
         }
         stage('Post-build') {
             steps {
-                archiveArtifacts artifacts: '**/*', fingerprint: true
+                echo 'Build terminado correctamente'
             }
         }
     }

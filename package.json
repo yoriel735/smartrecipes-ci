@@ -1,0 +1,23 @@
+{
+  "name": "smartrecipes-ci",
+  "version": "1.0.0",
+  "description": "Repositorio para CI/CD con Jenkins",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yoriel735/smartrecipes-ci.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/yoriel735/smartrecipes-ci/issues"
+  },
+  "homepage": "https://github.com/yoriel735/smartrecipes-ci#readme",
+  "dependencies": {
+    "lodash": "^4.17.21"
+  }
+}
